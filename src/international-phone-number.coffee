@@ -32,12 +32,12 @@ angular.module("internationalPhoneNumber", [])
       if element.val() != ''
         $timeout () ->
           element.intlTelInput 'setNumber', element.val()
-          ctrl.$setViewValue element.val()
+          ctrl.$setViewValue element.intlTelInput 'setNumber'
         , 0
 
 
     read = () ->
-      ctrl.$setViewValue element.val()
+      ctrl.$setViewValue element.intlTelInput 'setNumber'
 
     handleWhatsSupposedToBeAnArray = (value) ->
       if value instanceof Array
